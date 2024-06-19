@@ -7,6 +7,9 @@ jobs:
     steps:
       # Checkout code from the Git repository (replace with actual checkout command)
       - checkout
+	
+	post:
+	 - pip install -U pip setuptools virtualenv
 
       # Create virtual environment and install dependencies
       - run:
