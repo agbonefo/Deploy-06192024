@@ -3,21 +3,27 @@ jobs:
   build:
     docker:
       image: circleci/python:3.7 
-    working_directory: ~/devops
+    working_directory: ~/devops2
     steps:
       # Checkout code from the Git repository (replace with actual checkout command)
       - checkout
          post:
-	 - pip install -U pip setuptools virtualenv
+	 #- pip install -U pip setuptools virtualenv
 
       # Create virtual environment and install dependencies
       - run:
           name: Install dependencies
           command: |
             python3 -m venv venv
+            echo "i am here `pwd`" 
             . venv/bin/activate
-            pip install -r ~/devops/requirements.txt
+            pip install -r requirements.txt
 
+      - run:
+          name: Install dependencies  Henry Omozuwa
+          command: |
+	      cat requirements.txt > /tmp/requirements.txt
+	      pip install -r /tmp/requirements.txt
       # Run code style checks and unit tests
       - run:
           name: Run tests
