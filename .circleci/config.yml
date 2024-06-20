@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       image: circleci/python:3.7 
-    working_directory: ~/devops2
+    working_directory: ~//home/circleci/Deploy-06192024
     steps:
       # Checkout code from the Git repository (replace with actual checkout command)
       - checkout
