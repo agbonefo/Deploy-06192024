@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       image: circleci/python:3.7 
-    working_directory: ~//home/circleci/Deploy-06192024
+    working_directory: ~/Deploy-06192024
     steps:
       # Checkout code from the Git repository (replace with actual checkout command)
       - checkout
@@ -17,7 +17,9 @@ jobs:
             python3 -m venv venv
             echo "i am here `pwd`" 
             . venv/bin/activate
-            pip install -r requirements.txt
+            #pip install -r requirements.txt
+            a=`find . -type f -name "requirements.txt" -print` 
+            pip install -r $a 
 
       - run:
           name: Install dependencies  Henry Omozuwa
